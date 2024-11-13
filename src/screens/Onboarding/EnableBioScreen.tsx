@@ -21,7 +21,7 @@ const EnableBioScreen = ({
         <View style={styles.buttonActions}>
           <TouchableOpacity
             style={styles.openAccount}
-            onPress={() => navigation.navigate('Settings')}>
+            onPress={() => navigation.navigate('Dashboard')}>
             <Text style={styles.openAccountText}>Enable Biometrics</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.login}>

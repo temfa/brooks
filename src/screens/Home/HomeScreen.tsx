@@ -10,9 +10,9 @@ import QuickActions from '../../components/QuickActions';
 import QuickOptions from '../../components/QuickOptions';
 import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../utils/type';
-import Modals from '../../components/Modals';
-import {formatter, getTimeOfDay} from '../../utils/helper';
+import {getTimeOfDay} from '../../utils/helper';
 import HomeSlide from '../../components/HomeSlide';
+import Accounts from '../../components/Accounts';
 
 const HomeScreen = ({
   navigation,
@@ -24,22 +24,6 @@ const HomeScreen = ({
   useEffect(() => {
     setTime(getTimeOfDay());
   }, []);
-  const account = [
-    {
-      accountNo: '2120456781',
-      balance: 35000,
-      accountName: 'Chris Mboho ',
-      status: 'Active',
-      isPrimary: true,
-    },
-    {
-      accountNo: '5334204567',
-      balance: 0,
-      accountName: 'Chris Mboho ',
-      status: 'Active',
-      isPrimary: false,
-    },
-  ];
 
   return (
     <ScrollView
@@ -57,64 +41,10 @@ const HomeScreen = ({
       <QuickActions />
       <HomeSlide />
       <QuickOptions />
-      <Modals
-        visible={showModal}
-        setFalse={() => setShowModal(false)}
-        points={[25]}>
-        <View style={styles.modalContainer}>
-          {account?.map((item, index) => {
-            return (
-              <View
-                style={
-                  item.isPrimary
-                    ? [{...styles.modalSingle}, {backgroundColor: '#0557B6'}]
-                    : styles.modalSingle
-                }
-                key={index}>
-                <View style={styles.row}>
-                  <Text
-                    style={[
-                      {...styles.accountNo},
-                      {color: item.isPrimary ? '#fff' : '#1D1D1F'},
-                    ]}>
-                    {item.accountNo}
-                  </Text>
-                  <Text
-                    style={[
-                      {...styles.accountNo},
-                      {
-                        color: item.isPrimary ? '#fff' : '#1D1D1F',
-                        fontFamily: fonts.WorkSemiBold,
-                      },
-                    ]}>
-                    {formatter(item.balance)}
-                  </Text>
-                </View>
-                <View style={styles.row}>
-                  <Text
-                    style={[
-                      {...styles.accountName},
-                      {
-                        color: item.isPrimary ? '#fff' : '#7D7F88',
-                      },
-                    ]}>
-                    {item.accountName}
-                  </Text>
-                  <Text
-                    style={[
-                      {...styles.accountName},
-                      {
-                        color: item.isPrimary ? '#fff' : '#7D7F88',
-                      },
-                    ]}>
-                    {item.status}
-                  </Text>
-                </View>
-              </View>
-            );
-          })}
-        </View>
-      </Modals>
+      <Accounts
+        showModal={showModal}
+        setShowModal={() => setShowModal(false)}
+      />
     </ScrollView>
   );
 };
@@ -139,33 +69,5 @@ const styles = StyleSheet.create({
     color: '#242F40',
     fontSize: 16,
     lineHeight: 18.77,
-  },
-  modalContainer: {
-    paddingHorizontal: 22,
-    paddingTop: 22,
-    paddingBottom: 38,
-    gap: 16,
-  },
-  modalSingle: {
-    gap: 5,
-    borderRadius: 15,
-    paddingVertical: 12,
-    paddingLeft: 16,
-    paddingRight: 8,
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  accountNo: {
-    fontSize: 18,
-    fontFamily: fonts.WorkRegular,
-    lineHeight: 18,
-  },
-  accountName: {
-    fontFamily: fonts.WorkRegular,
-    fontSize: 10,
-    lineHeight: 10,
   },
 });

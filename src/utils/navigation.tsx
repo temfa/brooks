@@ -19,6 +19,20 @@ import TransferScreen from '../screens/Transfer/TransferScreen';
 import {fonts} from '../constants/fonts';
 import TransferSvg from '../assets/svgs/transferSvg';
 import NotificationScreen from '../screens/Home/NotificationScreen';
+import TransactionHistoryScreen from '../screens/Transfer/TransactionHistoryScreen';
+import InstantTransferScreen from '../screens/Transfer/InstantTransferScreen';
+import TransferSummaryScreen from '../screens/Transfer/TransferSummaryScreen';
+import AirtimeWelcomeScreen from '../screens/Airtime/AirtimeWelcomeScreen';
+import AirtimeHistoryScreen from '../screens/Airtime/AirtimeHistoryScreen';
+import GetAirtimeScreen from '../screens/Airtime/GetAirtimeScreen';
+import GetDataScreen from '../screens/Airtime/GetDataScreen';
+import BillWelcomeScreen from '../screens/Bills/BillsWelcomeScreen';
+import BillsHistoryScreen from '../screens/Bills/BillsHistoryScreen';
+import BillsProviderElectScreen from '../screens/Bills/BillsProviderElectScreen';
+import GetElectricityScreen from '../screens/Bills/GetElectricityScreen';
+import BillsProviderCableScreen from '../screens/Bills/BillsProviderCableScreen';
+import ChoosePackagesScreen from '../screens/Bills/ChoosePackagesScreen';
+import GetCableScreen from '../screens/Bills/GetCableScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,6 +55,7 @@ const TabButton = (props: any) => {
             {...styles.navTitle},
             {
               color: focused ? '#E7375B' : '#939699',
+              fontFamily: focused ? fonts.WorkBold : fonts.WorkRegular,
             },
           ]}>
           {item.name}
@@ -68,6 +83,106 @@ const HomeStack = () => {
     </Stack.Navigator>
   );
 };
+export const AirtimeStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: true}}
+      initialRouteName="AirtimeWelcome">
+      <Stack.Screen
+        name="AirtimeWelcome"
+        component={AirtimeWelcomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AirtimeHistory"
+        component={AirtimeHistoryScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="GetAirtime"
+        component={GetAirtimeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="GetData"
+        component={GetDataScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export const BillsStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: true}}
+      initialRouteName="BillWelcome">
+      <Stack.Screen
+        name="BillWelcome"
+        component={BillWelcomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="BillsHistory"
+        component={BillsHistoryScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="BillsProviderElect"
+        component={BillsProviderElectScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="GetElectricity"
+        component={GetElectricityScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="GetCable"
+        component={GetCableScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="BillsProviderCable"
+        component={BillsProviderCableScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ChoosePackages"
+        component={ChoosePackagesScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+export const TransferStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: true}}
+      initialRouteName="TransferHome">
+      <Stack.Screen
+        name="TransferHome"
+        component={TransferScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TransactionHistory"
+        component={TransactionHistoryScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="InstantTransfer"
+        component={InstantTransferScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TransferSummary"
+        component={TransferSummaryScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const buttonTabData = [
   {
@@ -78,13 +193,13 @@ const buttonTabData = [
   },
   {
     name: 'Transfer',
-    component: TransferScreen,
+    component: TransferStack,
     icon: <TransferSvg color="#8C9297" />,
     iconActive: <TransferSvg color="#E7375B" />,
   },
   {
     name: 'Pay Bills',
-    component: HomeStack,
+    component: BillsStack,
     icon: <BillSvg color="#8C9297" />,
     iconActive: <BillSvg color="#E7375B" />,
   },
@@ -126,7 +241,7 @@ export const ButtonTab = () => {
 const getTabBarStyle = (route: any): ViewStyle | undefined => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? '';
 
-  const hideTabScreens = ['Notification'];
+  const hideTabScreens = ['Notification', 'AirtimeWelcome'];
 
   if (hideTabScreens.includes(routeName)) {
     return {display: 'none'};
@@ -152,7 +267,6 @@ const styles = StyleSheet.create({
   },
 
   navTitle: {
-    fontFamily: fonts.WorkRegular,
     fontSize: 12,
     lineHeight: 14.08,
   },

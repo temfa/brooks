@@ -51,5 +51,10 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: '90%',
+    fontSize: 14,
+    fontFamily: fonts.WorkRegular,
+    lineHeight: 17.54,
+    letterSpacing: 0.09,
+    color: '#191A1C',
   },
 });

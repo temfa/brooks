@@ -12,7 +12,7 @@ import React, {
 import {
   BottomSheetBackdrop,
   BottomSheetModal,
-  BottomSheetScrollView,
+  BottomSheetView,
 } from '@gorhom/bottom-sheet';
 
 const Modals = ({
@@ -70,9 +70,7 @@ const Modals = ({
       backgroundStyle={{backgroundColor: '#FFFFFF'}}
       // enableDynamicSizing={true}
       onChange={handleSheetChanges}>
-      <BottomSheetScrollView style={{paddingBottom: 35}}>
-        {children}
-      </BottomSheetScrollView>
+      <BottomSheetView style={{paddingBottom: 35}}>{children}</BottomSheetView>
     </BottomSheetModal>
   );
 };

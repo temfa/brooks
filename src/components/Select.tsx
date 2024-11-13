@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {FC, useState} from 'react';
 import Icon, {Icons} from './Icons';
@@ -29,7 +30,7 @@ const Select: FC<Props> = ({label, header, search, data}) => {
         />
       </Pressable>
       <Modals
-        points={[50]}
+        points={['25%', '50%']}
         visible={visible}
         setFalse={() => setVisible(false)}>
         <View style={styles.modalContainer}>
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#B4B7B9',
-    paddingVertical: 22.5,
+    height: 57,
     paddingHorizontal: 22.5,
   },
   selectText: {

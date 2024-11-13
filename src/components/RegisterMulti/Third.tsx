@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import Input from '../Input';
@@ -11,7 +12,7 @@ const Third = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [calender, setCalender] = useState(false);
   return (
-    <ScrollView style={{height: '72%'}} showsVerticalScrollIndicator={false}>
+    <ScrollView style={{height: '70%'}} showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <Input label="BVN" type="numeric" />
         <Select
@@ -77,6 +78,7 @@ const Third = () => {
         isDarkModeEnabled
         onConfirm={(date: any) => {
           //   setDay(date);
+          console.log(date);
           setCalender(false);
         }}
         onCancel={() => setCalender(false)}
