@@ -1,4 +1,4 @@
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 import {fonts} from '../../constants/fonts';
 import {NavigationProp} from '@react-navigation/native';
@@ -13,16 +13,12 @@ const WelcomeScreen = ({
     setTimeout(() => {
       navigation.navigate('Walkthrough');
     }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <View style={styles.container}>
-      <ImageBackground
-        style={styles.welcomeBackground}
-        source={require('../../assets/welcome-background.png')}
-        resizeMode="stretch">
-        <Text style={styles.welcomeTitle}>Brooks</Text>
-        <Text style={styles.welcomeText}>Microfinance Bank</Text>
-      </ImageBackground>
+      <Text style={styles.welcomeTitle}>Brooks</Text>
+      <Text style={styles.welcomeText}>Microfinance Bank</Text>
     </View>
   );
 };
@@ -34,12 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#263238',
-  },
-
-  welcomeBackground: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000000',
   },
   welcomeTitle: {
     fontFamily: fonts.SyneBold,

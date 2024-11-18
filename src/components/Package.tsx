@@ -10,7 +10,7 @@ type Props = {
   icon: ReactNode;
   title: string;
   link: keyof RootStackParamList;
-  params?: any;
+  params: RootStackParamList[keyof RootStackParamList];
   text: string;
 };
 

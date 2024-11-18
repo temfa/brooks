@@ -30,7 +30,9 @@ const NotificationScreen = ({
       {notifcationData.length === 0 ? (
         <View style={styles.containerBody}>
           <BigBellSvg />
-          <Text style={styles.no}>No notification yet</Text>
+          <Text style={styles.no}>
+            Oops! You don’t have any notifications yet
+          </Text>
         </View>
       ) : (
         <FlatList
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 30.19,
     color: '#242424',
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikBold,
   },
   containerBody: {
     justifyContent: 'center',
@@ -105,9 +107,9 @@ const styles = StyleSheet.create({
   },
   no: {
     fontSize: 16,
-    lineHeight: 18,
-    color: '#A9ACBA',
-    fontFamily: fonts.WorkRegular,
+    lineHeight: 21,
+    color: '#969DAE',
+    fontFamily: fonts.SatoshiMedium,
   },
   containerSingle: {
     flexDirection: 'row',
@@ -125,13 +127,13 @@ const styles = StyleSheet.create({
   containerTexts: {
     fontSize: 16,
     lineHeight: 20,
-    fontFamily: fonts.WorkMedium,
+    fontFamily: fonts.SatoshiBold,
     color: '#000000',
   },
   containerDate: {
     fontSize: 14,
     lineHeight: 20,
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.SatoshiMedium,
     color: '#6A6B70',
   },
 });

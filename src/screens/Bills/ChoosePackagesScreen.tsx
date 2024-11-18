@@ -19,7 +19,7 @@ const ChoosePackagesScreen = () => {
             text={item.text}
             title={item.title}
             link="GetCable"
-            params={item.title}
+            params={{title: item.title}}
             icon={
               <View
                 style={{

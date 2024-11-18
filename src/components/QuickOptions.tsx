@@ -8,7 +8,7 @@ import {fonts} from '../constants/fonts';
 const QuickOptions = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.quickTitle}>Quick Options</Text>
+      <Text style={styles.quickTitle}>More actions</Text>
       <View style={styles.quickOption}>
         <View style={styles.quickSingle}>
           <View style={styles.quickLeft}>
@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
     gap: 21,
   },
   quickTitle: {
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikBold,
     fontSize: 16,
     lineHeight: 18,
-    color: '#272626',
+    color: '#2D2A2A',
   },
   quickOption: {
     gap: 37,
@@ -73,15 +73,15 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   quickTextTitle: {
-    fontSize: 14,
-    lineHeight: 16.42,
-    fontFamily: fonts.WorkRegular,
+    fontSize: 16,
+    lineHeight: 19.2,
+    fontFamily: fonts.AeonikRegular,
     color: '#394455',
   },
   quickSubText: {
-    fontFamily: fonts.WorkLight,
-    fontSize: 11,
-    lineHeight: 11,
+    fontFamily: fonts.SatoshiRegular,
+    fontSize: 12,
+    lineHeight: 16,
     color: '#6B6E73',
   },
 });

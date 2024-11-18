@@ -8,16 +8,15 @@ import {
   Text,
   TouchableOpacity,
   View,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import React, {useState} from 'react';
 import SafeArea from '../../components/SafeArea';
 import Icon, {Icons} from '../../components/Icons';
-import CircularStepIndicator from '../../components/StepIndicator';
 import {fonts} from '../../constants/fonts';
 import {registerHeaderText} from '../../utils/data';
 import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../utils/type';
-import {TouchableWithoutFeedback} from 'react-native';
 import First from '../../components/RegisterMulti/First';
 import Second from '../../components/RegisterMulti/Second';
 import Third from '../../components/RegisterMulti/Third';
@@ -67,10 +66,18 @@ const RegisterScreen = ({
                     type={Icons.AntDesign}
                     name="arrowleft"
                     size={24}
-                    color="#000000"
+                    color="#fff"
                   />
                 </Pressable>
-                <CircularStepIndicator step={active} totalSteps={4} />
+                <Text
+                  style={[{...styles.step}, {fontFamily: fonts.AeonikLight}]}>
+                  Step{' '}
+                  <Text style={{fontFamily: fonts.AeonikBold}}>{active}</Text>
+                  <Text style={{fontFamily: fonts.AeonikBold, fontSize: 14}}>
+                    /4
+                  </Text>
+                </Text>
+                {/* <CircularStepIndicator step={active} totalSteps={4} /> */}
               </View>
               <View style={styles.headerCaptions}>
                 <Text style={styles.headerTitle}>
@@ -89,8 +96,8 @@ const RegisterScreen = ({
                 Didn’t receive the code?{' '}
                 <Text
                   style={{
-                    fontFamily: fonts.WorkMedium,
-                    color: '#1B7AFC',
+                    fontFamily: fonts.SatoshiMedium,
+                    color: '#0261E3',
                   }}>
                   Resend Code
                 </Text>
@@ -104,20 +111,25 @@ const RegisterScreen = ({
               }
               style={styles.bottomCont}>
               <Text style={styles.bottomText}>
-                {active === 4 ? 'Proceed' : active === 2 ? 'Submit' : 'Next'}
+                {active === 4 ? 'Proceed' : active === 2 ? 'Verify' : 'Next'}
               </Text>
             </TouchableOpacity>
             {active === 1 && (
-              <Text style={styles.already}>
-                Already have an account?{' '}
-                <Text
-                  style={{
-                    fontFamily: fonts.WorkSemiBold,
-                    color: '#E7375B',
-                  }}>
-                  Log in
-                </Text>
-              </Text>
+              <View style={styles.alreadyContainer}>
+                <Text style={styles.already}>Already have an account? </Text>
+                <Pressable onPress={() => navigation.navigate('Login')}>
+                  <Text
+                    style={[
+                      {...styles.already},
+                      {
+                        fontFamily: fonts.AeonikBold,
+                        color: '#E7375B',
+                      },
+                    ]}>
+                    Log in
+                  </Text>
+                </Pressable>
+              </View>
             )}
           </View>
         </KeyboardAvoidingView>
@@ -139,9 +151,10 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 155,
-    backgroundColor: '#D0E4FF',
+    backgroundColor: '#0261E3',
     paddingHorizontal: 24,
     gap: 21,
+    paddingTop: 13,
   },
   navigation: {
     flexDirection: 'row',
@@ -149,21 +162,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
+  step: {
+    fontSize: 16,
+    lineHeight: 16,
+    color: '#fff',
+    fontFamily: fonts.AeonikBold,
+  },
   headerCaptions: {
     gap: 6,
   },
   headerTitle: {
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikBold,
     fontSize: 24,
     lineHeight: 30.19,
-    color: '#242424',
+    color: '#fff',
   },
   headerText: {
-    fontSize: 13,
-    fontFamily: fonts.WorkRegular,
-    lineHeight: 15.25,
-    color: '#394455',
-    width: 315,
+    fontSize: 14,
+    fontFamily: fonts.SatoshiRegular,
+    lineHeight: 19,
+    color: '#fff',
+    width: 319,
   },
   body: {
     paddingHorizontal: 24,
@@ -181,24 +200,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    marginTop: 10,
   },
   otp: {
     fontSize: 14,
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.SatoshiRegular,
     lineHeight: 16.42,
     color: '#606470',
-    marginBottom: 15,
   },
   bottomText: {
     // color: '#818587',
     color: 'white',
     fontSize: 16,
+    lineHeight: 16,
+    fontFamily: fonts.AeonikRegular,
+  },
+  alreadyContainer: {
+    flexDirection: 'row',
+    gap: 2,
+    alignItems: 'center',
   },
   already: {
     fontSize: 16,
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.AeonikRegular,
     lineHeight: 18.77,
     color: '#67686B',
+    alignItems: 'center',
   },
 });

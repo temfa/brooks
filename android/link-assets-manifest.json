@@ -2,6 +2,38 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/AeonikBold.otf",
+      "sha1": "55fc9e1587be9bb25dcf0295a5d258e7a586e6bd"
+    },
+    {
+      "path": "assets/fonts/AeonikLight.otf",
+      "sha1": "a288de8ec36452afb4d5089dea70409f052a1706"
+    },
+    {
+      "path": "assets/fonts/AeonikRegular.otf",
+      "sha1": "2a3b954437d34dfee57b46f092f7e222d805d445"
+    },
+    {
+      "path": "assets/fonts/SatoshiBlack.ttf",
+      "sha1": "fd050e574e3e81d3468651f9bc6184319b25bfc6"
+    },
+    {
+      "path": "assets/fonts/SatoshiBold.ttf",
+      "sha1": "b825a4a89b7257537a202316b08997a2d2f00a49"
+    },
+    {
+      "path": "assets/fonts/SatoshiLight.ttf",
+      "sha1": "ea23468d55ad9a76958cf84a52b71b65bea35db0"
+    },
+    {
+      "path": "assets/fonts/SatoshiMedium.ttf",
+      "sha1": "e4539f4688c865204a879dc3253d3547f0444818"
+    },
+    {
+      "path": "assets/fonts/SatoshiRegular.ttf",
+      "sha1": "bc605aa08468cfb9a40275a6386ada56c92a5bed"
+    },
+    {
       "path": "assets/fonts/SyneBold.ttf",
       "sha1": "2830f4a34f1c36916b5a49bdf9bce409e123f28f"
     },

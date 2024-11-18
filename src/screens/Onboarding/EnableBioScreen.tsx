@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 28,
     paddingTop: 46,
     paddingBottom: 22,
-    backgroundColor: '#D0E4FF',
+    backgroundColor: '#0261E3',
     height: 163,
     justifyContent: 'flex-end',
     width: '100%',
@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     lineHeight: 30,
-    fontFamily: fonts.WorkSemiBold,
-    color: '#242424',
+    fontFamily: fonts.AeonikBold,
+    color: '#FFFFFF',
   },
   text: {
     fontSize: 14,
-    lineHeight: 18,
-    fontFamily: fonts.WorkRegular,
-    color: '#394455',
+    lineHeight: 19,
+    fontFamily: fonts.AeonikRegular,
+    color: '#FFFFFF',
   },
   buttonActions: {
     gap: 14,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   openAccountText: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: fonts.WorkBold,
+    fontFamily: fonts.AeonikBold,
     color: '#fff',
   },
   login: {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   loginText: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikRegular,
     color: '#455A64',
   },
 });

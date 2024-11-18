@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   accountBalance: {
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    backgroundColor: '#0c79d7',
+    backgroundColor: '#0E43F6',
     gap: 16,
     paddingHorizontal: 21,
     paddingTop: 12,

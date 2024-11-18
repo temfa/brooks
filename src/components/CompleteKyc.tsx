@@ -2,8 +2,11 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {fonts} from '../constants/fonts';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {RootStackParamList} from '../utils/type';
 
 const CompleteKyc = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -12,7 +15,9 @@ const CompleteKyc = () => {
         </View>
         <Text style={styles.complete}>65% Complete</Text>
       </View>
-      <TouchableOpacity style={styles.middle}>
+      <TouchableOpacity
+        style={styles.middle}
+        onPress={() => navigation.navigate('Kyc')}>
         <Text style={styles.middleText}>Complete KYC</Text>
       </TouchableOpacity>
       <Text style={styles.bottom}>
@@ -46,12 +51,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#A0A3BD',
   },
   position: {
-    backgroundColor: '#26E7B3',
+    backgroundColor: '#067F5E',
     height: '100%',
     borderRadius: 100,
   },
   complete: {
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.SatoshiMedium,
     fontSize: 12,
     lineHeight: 17,
     color: '#394455',
@@ -65,15 +70,16 @@ const styles = StyleSheet.create({
     height: 35,
   },
   middleText: {
-    fontFamily: fonts.WorkMedium,
+    fontFamily: fonts.SatoshiMedium,
     fontSize: 12,
     lineHeight: 15,
     color: '#FFFFFF',
   },
   bottom: {
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.AeonikRegular,
+    textAlign: 'center',
     fontSize: 13,
-    lineHeight: 15,
-    color: '#000000',
+    lineHeight: 16,
+    color: '#686161',
   },
 });

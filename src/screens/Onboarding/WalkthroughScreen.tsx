@@ -11,9 +11,9 @@ import {
 import React, {useRef, useState} from 'react';
 import {fonts} from '../../constants/fonts';
 import {onboardingData} from '../../utils/data';
-import SafeArea from '../../components/SafeArea';
 import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../utils/type';
+// import {useGetUserBlogsMutation} from '../../redux/api/mutationApi';
 
 const screenWidth = Dimensions.get('window').width;
 const WalkthroughScreen = ({
@@ -32,71 +32,84 @@ const WalkthroughScreen = ({
   //     if (active !== onboardingData?.length) setActive(viewableItems.viewableItems[0].index)
   //     else setActive(0);
   //   }, 6000);
+  // const [blog, {isLoading}] = useGetUserBlogsMutation();
+
+  // useEffect(() => {
+  //   blog({page: 1, pageSize: 25, category: 'Artificial Intelligence'})
+  //     .unwrap() // Directly handle the response or error
+  //     .then(response => {
+  //       console.log(response);
+  //       // setData(response.data);
+  //       // setPagination(response.pagination);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       // toast.error(err.data?.message);
+  //     });
+  // }, [blog]);
 
   return (
-    <SafeArea>
-      <View style={styles.container}>
-        <View style={styles.swiperContainer}>
-          <View style={styles.pagination}>
-            {onboardingData?.map((_, index) => {
-              return (
-                <View
-                  style={[
-                    styles.dot,
-                    index === active && {
-                      width: 20,
-                      borderRadius: 32,
-                    },
-                    {
-                      backgroundColor: index === active ? '#252627' : '#9D9D9D',
-                    },
-                  ]}
-                  key={index}
-                />
-              );
-            })}
-          </View>
-          <FlatList
-            data={onboardingData}
-            renderItem={({item}) => (
-              <View style={styles.carouselContainer}>
-                {/* <View style={styles.carouselWrapper}> */}
-                <Image
-                  source={item.image}
-                  height={item.height}
-                  width={item.width}
-                  //   style={styles.carouselImages}
-                />
-                {/* </View> */}
-                <View style={styles.carouselDetails}>
-                  <Text style={styles.carouselTitle}>{item.title}</Text>
-                  <Text style={styles.carouselText}>{item.text}</Text>
-                </View>
+    <View style={styles.container}>
+      <View style={styles.swiperContainer}>
+        <View style={styles.pagination}>
+          {onboardingData?.map((_, index) => {
+            return (
+              <View
+                style={[
+                  styles.dot,
+                  index === active && {
+                    width: 14,
+                    borderRadius: 32,
+                  },
+                  {
+                    backgroundColor: index === active ? '#0557B6' : '#978F8F',
+                  },
+                ]}
+                key={index}
+              />
+            );
+          })}
+        </View>
+        <FlatList
+          data={onboardingData}
+          renderItem={({item}) => (
+            <View style={styles.carouselContainer}>
+              {/* <View style={styles.carouselWrapper}> */}
+              <Image
+                source={item.image}
+                height={item.height}
+                width={item.width}
+                //   style={styles.carouselImages}
+              />
+              {/* </View> */}
+              <View style={styles.carouselDetails}>
+                <Text style={styles.carouselTitle}>{item.title}</Text>
+                <Text style={styles.carouselText}>{item.text}</Text>
               </View>
-            )}
-            showsHorizontalScrollIndicator={false}
-            horizontal
-            pagingEnabled={true}
-            snapToAlignment="center"
-            snapToInterval={screenWidth}
-            decelerationRate={'fast'}
-            onViewableItemsChanged={onViewRef.current}
-          />
-        </View>
-        <View style={styles.buttonActions}>
-          <TouchableOpacity
-            style={styles.openAccount}
-            onPress={() => navigation.navigate('Register')}>
-            <Text style={styles.openAccountText}>Open Account</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.login}
-            onPress={() => navigation.navigate('Login')}>
-            <Text style={styles.loginText}>Login</Text>
-          </TouchableOpacity>
-        </View>
+            </View>
+          )}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          pagingEnabled={true}
+          snapToAlignment="center"
+          snapToInterval={screenWidth}
+          decelerationRate={'fast'}
+          onViewableItemsChanged={onViewRef.current}
+        />
       </View>
-    </SafeArea>
+      <View style={styles.buttonActions}>
+        <TouchableOpacity
+          style={styles.openAccount}
+          onPress={() => navigation.navigate('Register')}>
+          <Text style={styles.openAccountText}>Create Account</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.login}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.loginText}>Login</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
@@ -106,11 +119,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    paddingBottom: 28,
+    paddingVertical: 28,
+    backgroundColor: '#fff',
   },
   swiperContainer: {
-    height: 477,
-    backgroundColor: '#D0E4FF',
+    gap: 31,
   },
 
   carouselContainer: {
@@ -130,23 +143,23 @@ const styles = StyleSheet.create({
     marginTop: 36,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '69%',
+    width: '64%',
     gap: 8,
   },
   carouselTitle: {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 24,
     lineHeight: 28,
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikBold,
     color: '#000000',
   },
 
   carouselText: {
     textAlign: 'center',
     fontSize: 14,
-    lineHeight: 16.42,
-    fontFamily: fonts.WorkRegular,
-    color: '#394455',
+    lineHeight: 19,
+    fontFamily: fonts.SatoshiRegular,
+    color: '#000000',
   },
 
   pagination: {
@@ -160,7 +173,6 @@ const styles = StyleSheet.create({
     height: 6,
     borderRadius: 3,
     marginHorizontal: 10,
-    backgroundColor: '#9D9D9D',
   },
   buttonActions: {
     gap: 14,
@@ -177,7 +189,7 @@ const styles = StyleSheet.create({
   openAccountText: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: fonts.WorkBold,
+    fontFamily: fonts.AeonikBold,
     color: '#fff',
   },
   login: {
@@ -191,7 +203,7 @@ const styles = StyleSheet.create({
   loginText: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikRegular,
     color: '#455A64',
   },
 });

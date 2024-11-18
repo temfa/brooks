@@ -10,4 +10,12 @@ export const fonts = {
   SyneMedium: 'SyneMedium',
   SyneRegular: 'SyneRegular',
   SyneSemiBold: 'SyneSemiBold',
+  SatoshiBold: 'SatoshiBold',
+  SatoshiBlack: 'SatoshiBlack',
+  SatoshiMedium: 'SatoshiMedium',
+  SatoshiRegular: 'SatoshiRegular',
+  SatoshiLight: 'SatoshiLight',
+  AeonikRegular: 'AeonikRegular',
+  AeonikLight: 'AeonikLight',
+  AeonikBold: 'AeonikBold',
 };

@@ -12,7 +12,7 @@ const Third = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [calender, setCalender] = useState(false);
   return (
-    <ScrollView style={{height: '70%'}} showsVerticalScrollIndicator={false}>
+    <ScrollView style={{height: '75%'}} showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <Input label="BVN" type="numeric" />
         <Select
@@ -106,14 +106,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#B4B7B9',
-    paddingVertical: 22.5,
-    paddingHorizontal: 22.5,
+    paddingHorizontal: 14,
   },
   selectText: {
     fontSize: 12,
-    lineHeight: 12,
-    color: '#A1A4A3',
-    fontFamily: fonts.WorkRegular,
+    lineHeight: 18,
+    color: '#585C60',
+    letterSpacing: 0.09,
+    fontFamily: fonts.SatoshiMedium,
   },
   checkbox: {
     flexDirection: 'row',

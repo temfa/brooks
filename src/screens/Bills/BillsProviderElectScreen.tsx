@@ -21,7 +21,7 @@ const BillsProviderElectScreen = () => {
           <AirtimeSingle
             title={item.title}
             link="GetElectricity"
-            params={item.title}
+            params={{title: item.title}}
             icon={
               <View
                 style={{

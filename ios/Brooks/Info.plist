@@ -72,6 +72,26 @@
 		<string>WorkSansSemiBoldItalic.ttf</string>
 		<string>WorkSansThin.ttf</string>
 		<string>WorkSansThinItalic.ttf</string>
+		<string>AeonikBold.otf</string>
+		<string>AeonikLight.otf</string>
+		<string>AeonikRegular.otf</string>
+		<string>SatoshiBlack.ttf</string>
+		<string>SatoshiBold.ttf</string>
+		<string>SatoshiLight.ttf</string>
+		<string>SatoshiMedium.ttf</string>
+		<string>SatoshiRegular.ttf</string>
 	</array>
+	<key>NSDocumentDirectoryUsageDescription</key>
+	<string>We need access to your documents to upload or share files.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to select files.</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs access to your Camera.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs access to your Microphone.</string>
 </dict>
 </plist>

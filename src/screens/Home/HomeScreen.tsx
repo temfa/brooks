@@ -65,9 +65,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   salute: {
-    fontFamily: fonts.WorkMedium,
+    fontFamily: fonts.AeonikRegular,
     color: '#242F40',
     fontSize: 16,
-    lineHeight: 18.77,
+    lineHeight: 19,
   },
 });

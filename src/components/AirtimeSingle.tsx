@@ -1,3 +1,4 @@
+/* eslint-disable curly */
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {FC, ReactNode} from 'react';
 import CaretRightSvg from '../assets/svgs/caretRight';
@@ -7,9 +8,9 @@ import {fonts} from '../constants/fonts';
 
 type Props = {
   icon: ReactNode;
-  title: string;
   link: keyof RootStackParamList;
-  params?: any;
+  title: string;
+  params?: RootStackParamList[keyof RootStackParamList];
 };
 
 const AirtimeSingle: FC<Props> = ({icon, title, link, params}) => {
@@ -17,7 +18,13 @@ const AirtimeSingle: FC<Props> = ({icon, title, link, params}) => {
   return (
     <Pressable
       style={styles.container}
-      onPress={() => navigation.navigate(link, params)}>
+      onPress={() => {
+        if (link === 'GetElectricity' || link === 'ChoosePackages') {
+          navigation.navigate(link, params as {title: string}); // Explicit type assertion
+        } else {
+          navigation.navigate(link); // No params for other screens
+        }
+      }}>
       <View style={styles.containerSide}>
         {icon}
         <Text style={styles.title}>{title}</Text>
@@ -43,6 +50,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 17,
     alignItems: 'center',
+    width: '85%',
   },
   title: {
     fontSize: 17,
@@ -50,6 +58,5 @@ const styles = StyleSheet.create({
     color: '#394455',
     fontFamily: fonts.WorkSemiBold,
     flexWrap: 'wrap',
-    width: '85%',
   },
 });

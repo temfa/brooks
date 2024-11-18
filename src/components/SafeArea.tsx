@@ -5,7 +5,7 @@ const SafeArea = ({children}: {children: ReactNode}) => {
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <SafeAreaView style={{flex: 1}}>
-      <StatusBar barStyle="dark-content" backgroundColor="#D0E4FF" />
+      <StatusBar barStyle="light-content" backgroundColor="#0261E3" />
       {children}
     </SafeAreaView>
   );

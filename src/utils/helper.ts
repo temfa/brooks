@@ -24,3 +24,16 @@ export const getTimeOfDay = () => {
 
   return time;
 };
+
+export const getInitials = (text: string): string => {
+  // Split the text into words
+  const words = text.trim().split(' ');
+
+  // Extract the first letter of the first two words
+  const initials = words
+    .slice(0, 2) // Get the first two words
+    .map(word => word[0]?.toUpperCase() || '') // Get the first letter and convert to uppercase
+    .join(''); // Join the initials
+
+  return initials;
+};

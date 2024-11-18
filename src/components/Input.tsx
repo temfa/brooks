@@ -45,7 +45,7 @@ const Input: FC<Props> = ({label, type}) => {
       {
         translateY: labelAnim.interpolate({
           inputRange: [0, 1],
-          outputRange: [22, 0], // Adjust starting position for label
+          outputRange: [17, 0], // Adjust starting position for label
         }),
       },
     ],
@@ -77,8 +77,6 @@ const Input: FC<Props> = ({label, type}) => {
 const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
-    // paddingVertical: 12,
-    height: 57,
     paddingHorizontal: 10,
     borderRadius: 10,
   },
@@ -86,17 +84,18 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 14,
     fontSize: 12,
-    lineHeight: 12,
-    fontFamily: fonts.WorkSemiBold,
-    color: '#C2C3C6',
+    lineHeight: 18,
+    letterSpacing: 0.09,
+    fontFamily: fonts.SatoshiMedium,
+    color: '#585C60',
   },
   input: {
     fontSize: 14,
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.SatoshiMedium,
     lineHeight: 17.54,
     letterSpacing: 0.09,
     color: '#191A1C',
-    paddingTop: 25,
+    paddingTop: 30,
   },
 });
 

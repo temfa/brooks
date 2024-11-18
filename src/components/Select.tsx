@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, TextInput, View} from 'react-native';
 import React, {FC, useState} from 'react';
 import Icon, {Icons} from './Icons';
 import Modals from './Modals';
@@ -37,8 +37,13 @@ const Select: FC<Props> = ({label, header, search, data}) => {
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>{header}</Text>
             {search && (
-              <View>
+              <View style={styles.searchContainer}>
                 <Icon type={Icons.FontAwesome} name="search" color="#9A9EA1" />
+                <TextInput
+                  placeholder="Search"
+                  style={styles.input}
+                  placeholderTextColor="#7D7F88"
+                />
               </View>
             )}
           </View>
@@ -50,7 +55,7 @@ const Select: FC<Props> = ({label, header, search, data}) => {
                   style={[
                     {...styles.modalSingle},
                     {
-                      backgroundColor: item === selected ? '#176EAE24' : '#fff',
+                      backgroundColor: item === selected ? '#0091FC3B' : '#fff',
                     },
                   ]}
                   key={index}>
@@ -70,7 +75,7 @@ const Select: FC<Props> = ({label, header, search, data}) => {
                     <Icon
                       type={Icons.Octicons}
                       name="check-circle-fill"
-                      color="#0B436D"
+                      color="#0261E3"
                       size={15}
                     />
                   )}
@@ -95,13 +100,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#B4B7B9',
     height: 57,
-    paddingHorizontal: 22.5,
+    paddingHorizontal: 14,
   },
   selectText: {
     fontSize: 12,
-    lineHeight: 12,
-    color: '#A1A4A3',
-    fontFamily: fonts.WorkRegular,
+    lineHeight: 18,
+    color: '#585C60',
+    letterSpacing: 0.09,
+    fontFamily: fonts.SatoshiMedium,
   },
   modalContainer: {
     gap: 20,
@@ -112,9 +118,9 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   modalTitle: {
-    fontFamily: fonts.WorkSemiBold,
-    fontSize: 21.69,
-    lineHeight: 22,
+    fontFamily: fonts.AeonikBold,
+    fontSize: 20,
+    lineHeight: 18,
     color: '#2B2B2D',
   },
   modalBody: {
@@ -135,5 +141,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 16,
     color: '#6C6D6F',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    gap: 4,
+    backgroundColor: '#F2F2F3',
+    borderRadius: 15,
+    paddingVertical: 7,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+  },
+  input: {
+    fontSize: 13,
+    lineHeight: 15,
+    color: '#7D7F88',
+    fontFamily: fonts.WorkRegular,
+    paddingTop: 15,
   },
 });

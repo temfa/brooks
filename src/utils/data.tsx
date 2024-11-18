@@ -1,8 +1,21 @@
 /* eslint-disable react/react-in-jsx-scope */
+import {ReactNode} from 'react';
 import AirtimeSvg from '../assets/svgs/airtimeSvg';
-import BillSvg from '../assets/svgs/billSvg';
 import LoanSvg from '../assets/svgs/loan';
+import MoreAirtime from '../assets/svgs/moreAirtime';
+import MoreBills from '../assets/svgs/moreBills';
+import MoreContact from '../assets/svgs/morecontact';
+import MoreKyc from '../assets/svgs/moreKyc';
+import MoreLoan from '../assets/svgs/moreLoan';
+import MoreSettings from '../assets/svgs/moreSettings';
+import MoreTransSvg from '../assets/svgs/moreTrans';
 import TransSvg from '../assets/svgs/transSvg';
+import {RootStackParamList} from './type';
+import MyPinSvg from '../assets/svgs/myPin';
+import MyPasswordSvg from '../assets/svgs/myPassword';
+import MyCardSvg from '../assets/svgs/myCard';
+import MyLimitSvg from '../assets/svgs/myLimit';
+import QuickBillSvg from '../assets/svgs/quickBill';
 
 export const onboardingData = [
   {
@@ -10,16 +23,16 @@ export const onboardingData = [
     title: 'Own a Bank account in 5minutes',
     text: 'Managing your money is what we do and we are really good at it.',
     image: require('../assets/first.png'),
-    width: 208,
-    height: 229,
+    width: 265,
+    height: 227,
   },
   {
     id: 2,
     title: 'Get a Debit card to make payments',
     text: 'Managing your money is what we do and we are really good at it.',
     image: require('../assets/second.png'),
-    width: 235,
-    height: 256,
+    width: 253,
+    height: 243,
   },
   {
     id: 3,
@@ -58,7 +71,13 @@ export const registerHeaderText = [
   },
 ];
 
-export const quick = [
+type QuickProps = {
+  icon: ReactNode;
+  title: string;
+  link: keyof RootStackParamList;
+};
+
+export const quick: QuickProps[] = [
   {
     icon: <TransSvg />,
     title: 'Transfers',
@@ -75,7 +94,7 @@ export const quick = [
     link: 'Airtime',
   },
   {
-    icon: <BillSvg color="#394455" />,
+    icon: <QuickBillSvg />,
     title: 'Pay Bills',
     link: 'Pay Bills',
   },
@@ -402,5 +421,161 @@ export const packages = [
     id: 7,
     title: 'DSTV Compact',
     text: 'Amount: NGN22,100',
+  },
+];
+
+type moreDataProps = {
+  id: number;
+  title: string;
+  icon: ReactNode;
+  link: keyof RootStackParamList;
+};
+
+export const moreData: moreDataProps[] = [
+  {
+    id: 1,
+    title: 'Transfer',
+    icon: <MoreTransSvg />,
+    link: 'Transfer',
+  },
+  {
+    id: 2,
+    title: 'Buy Airtime',
+    icon: <MoreAirtime />,
+    link: 'Airtime',
+  },
+  {
+    id: 3,
+    title: 'Pay Bills',
+    icon: <MoreBills />,
+    link: 'Pay Bills',
+  },
+  {
+    id: 4,
+    title: 'Loan',
+    icon: <MoreLoan />,
+    link: 'Loans',
+  },
+  {
+    id: 5,
+    title: 'Update KYC',
+    icon: <MoreKyc />,
+    link: 'Kyc',
+  },
+  {
+    id: 6,
+    title: 'My Account Setting',
+    icon: <MoreSettings />,
+    link: 'MyAccount',
+  },
+  {
+    id: 7,
+    title: 'Contact Us',
+    icon: <MoreContact />,
+    link: 'Contact',
+  },
+];
+
+export const myAccountData: moreDataProps[] = [
+  {
+    id: 1,
+    title: 'PIN Settings',
+    icon: <MyPinSvg />,
+    link: 'PinSettings',
+  },
+  {
+    id: 2,
+    title: 'Password Settings',
+    icon: <MyPasswordSvg />,
+    link: 'ChangePassword',
+  },
+  {
+    id: 3,
+    title: 'Transfer Limit',
+    icon: <MyLimitSvg />,
+    link: 'ChangeLimit',
+  },
+  {
+    id: 4,
+    title: 'Card Settings',
+    icon: <MyCardSvg />,
+    link: 'Card',
+  },
+  {
+    id: 5,
+    title: 'Manage Beneficiaries',
+    icon: <MyCardSvg />,
+    link: 'Beneficiaries',
+  },
+];
+
+export const transBeneData = [
+  {
+    id: 1,
+    name: 'Benedict Owobu',
+    account: 5334204567,
+    bank: 'Zenith Bank',
+  },
+  {
+    id: 2,
+    name: 'Jude Ekpe',
+    account: 5334204567,
+    bank: 'Access Bank',
+  },
+  {
+    id: 3,
+    name: 'Queen Ikpo',
+    account: 5334204567,
+    bank: 'Stanbic IBTC Bank',
+  },
+  {
+    id: 4,
+    name: 'Tega Oko',
+    account: 5334204567,
+    bank: 'Wema Bank',
+  },
+  {
+    id: 5,
+    name: 'Tega Oko',
+    account: 5334204567,
+    bank: 'Wema Bank',
+  },
+];
+export const payBeneData = [
+  {
+    id: 1,
+    name: 'Paul Jeremiah',
+    network: 'MTN',
+    number: '08188919027',
+  },
+  {
+    id: 2,
+    name: 'Justine Efe',
+    network: 'MTN',
+    number: '08188919027',
+  },
+  {
+    id: 3,
+    name: 'Paul Jeremiah',
+    network: 'MTN',
+    number: '08188919027',
+  },
+  {
+    id: 4,
+    name: 'Paul Jeremiah',
+    network: 'MTN',
+    number: '08188919027',
+  },
+  {
+    id: 5,
+    name: 'Paul Jeremiah',
+    network: 'MTN',
+    number: '08188919027',
+  },
+  {
+    id: 6,
+    name: 'Paul Jeremiah',
+    network: 'MTN',
+    number: '08188919027',
   },
 ];

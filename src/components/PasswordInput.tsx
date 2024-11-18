@@ -13,6 +13,7 @@ const PasswordInput = ({label}: {label: string}) => {
           keyboardType={active ? 'default' : 'visible-password'}
           placeholder="XXXXXXXXXXXXXXXX"
           style={styles.textInput}
+          placeholderTextColor="#262728"
         />
         <Pressable onPress={() => setActive(!active)}>
           <Icon
@@ -39,9 +40,9 @@ const styles = StyleSheet.create({
   },
   containerTitle: {
     fontSize: 12,
-    lineHeight: 12,
-    fontFamily: fonts.WorkSemiBold,
-    color: '#C2C3C6',
+    lineHeight: 18,
+    fontFamily: fonts.SatoshiMedium,
+    color: '#585C60',
   },
   containerHeader: {
     flexDirection: 'row',
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   textInput: {
     width: '90%',
     fontSize: 14,
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.SatoshiMedium,
     lineHeight: 17.54,
     letterSpacing: 0.09,
     color: '#191A1C',

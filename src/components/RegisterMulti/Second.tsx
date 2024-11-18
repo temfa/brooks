@@ -26,12 +26,12 @@ export default Second;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    gap: 7,
+    gap: 14,
   },
   otp: {
-    fontFamily: fonts.WorkMedium,
+    fontFamily: fonts.SatoshiMedium,
     fontSize: 12,
-    lineHeight: 14.08,
+    lineHeight: 16.2,
     color: '#6D6F71',
   },
 });

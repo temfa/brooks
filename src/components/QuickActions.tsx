@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#DCD6CF',
   },
   quickTitle: {
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikBold,
     fontSize: 16,
     lineHeight: 18,
     color: '#272626',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   quickIcon: {
-    backgroundColor: '#CEE2FC',
+    backgroundColor: '#0E43F6',
     width: 47,
     height: 47,
     borderRadius: 23.5,
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
   },
   quickText: {
     fontSize: 12,
-    fontFamily: fonts.WorkMedium,
+    fontFamily: fonts.SatoshiMedium,
     lineHeight: 18,
-    color: '#5F5D5D',
+    color: '#363232',
     textAlign: 'center',
   },
 });

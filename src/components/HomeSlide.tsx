@@ -8,7 +8,7 @@ const HomeSlide = () => {
       <View style={styles.containerTexts}>
         <Text style={styles.containerTitle}>
           Join a 12months Ajo saving plan starting with
-          <Text style={styles.bold}>₦1,000 </Text>
+          <Text style={styles.bold}> ₦1,000 </Text>
         </Text>
         <TouchableOpacity style={styles.joinContainer}>
           <Text style={styles.joinText}>Join</Text>

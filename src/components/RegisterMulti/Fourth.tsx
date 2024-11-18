@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   firstText: {
-    fontFamily: fonts.WorkRegular,
+    fontFamily: fonts.SatoshiRegular,
     fontSize: 12,
     lineHeight: 14,
     color: 'black',

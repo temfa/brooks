@@ -21,7 +21,7 @@ const BillsProviderCableScreen = () => {
           <AirtimeSingle
             title={item.title}
             link="ChoosePackages"
-            params={item.title}
+            params={{title: item.title}}
             icon={
               <View
                 style={{
