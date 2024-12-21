@@ -27,11 +27,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 42,
     alignItems: 'center',
-    backgroundColor: '#0476F9',
+    backgroundColor: '#0E43F6',
     justifyContent: 'center',
     paddingVertical: 36,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+    height: 112,
   },
   single: {},
   text: {

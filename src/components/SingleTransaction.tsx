@@ -11,11 +11,11 @@ type Props = {
   name: string;
   amount: number;
   date: string;
-  status: 'Successful' | 'Failed' | 'Pending';
-  beneficiaryTitle: string;
+  // status: 'Successful' | 'Failed' | 'Pending';
+  // beneficiaryTitle: string;
   beneficiary: string;
-  network?: string;
-  transactionType: string;
+  // network?: string;
+  // transactionType: string;
 };
 
 const SingleTransaction: FC<Props> = ({
@@ -23,11 +23,7 @@ const SingleTransaction: FC<Props> = ({
   name,
   amount,
   date,
-  status,
   beneficiary,
-  beneficiaryTitle,
-  network,
-  transactionType,
 }) => {
   return (
     <View style={styles.container}>
@@ -45,38 +41,15 @@ const SingleTransaction: FC<Props> = ({
           </Text>
         </View>
         <View style={styles.row}>
-          <Text
-            style={[
-              {...styles.status},
-              {
-                color:
-                  status === 'Successful'
-                    ? '#02A77A'
-                    : status === 'Pending'
-                    ? '#4A4AFF'
-                    : '#EF0F3D',
-                backgroundColor:
-                  status === 'Successful'
-                    ? '#DAFAF1'
-                    : status === 'Pending'
-                    ? '#E6E6F2'
-                    : '#FCCDD7',
-              },
-            ]}>
-            {status}
-          </Text>
-          <Text style={styles.date}>{date}</Text>
+          <Text style={styles.beneficiaryTitle}>{beneficiary}</Text>
+          <Text style={styles.beneficiary}>{date}</Text>
         </View>
-        <View style={styles.row}>
-          <Text style={styles.beneficiaryTitle}>{beneficiaryTitle}</Text>
-          <Text style={styles.beneficiary}>{beneficiary}</Text>
-        </View>
-        {transactionType === 'Airtime' && (
+        {/* {transactionType === 'Airtime' && (
           <View style={styles.row}>
             <Text style={styles.beneficiaryTitle}>Network Provider</Text>
             <Text style={styles.beneficiary}>{network}</Text>
           </View>
-        )}
+        )} */}
       </View>
     </View>
   );
@@ -95,7 +68,7 @@ const styles = StyleSheet.create({
   },
   right: {
     gap: 2,
-    width: '79%',
+    flex: 1,
   },
   row: {
     flexDirection: 'row',

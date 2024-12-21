@@ -32,7 +32,6 @@ const LoginScreen = ({
       setBiometricType(bt);
     });
   }, []);
-
   return (
     <SafeArea>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -56,12 +55,14 @@ const LoginScreen = ({
                           if (success) navigation.navigate('Dashboard');
                         });
                       }}>
-                      <Text style={styles.finger}>
-                        Login with{' '}
-                        {biometricType === 'Biometrics'
-                          ? 'Fingerprint'
-                          : biometricType}
-                      </Text>
+                      {biometricType !== undefined && (
+                        <Text style={styles.finger}>
+                          Login with{' '}
+                          {biometricType === 'Biometrics'
+                            ? 'Fingerprint'
+                            : biometricType}
+                        </Text>
+                      )}
                     </Pressable>
                     <Pressable onPress={() => navigation.navigate('Forgot')}>
                       <Text style={styles.forgot}>Forgot Password?</Text>

@@ -32,16 +32,11 @@ const TransactionHistoryScreen = () => {
             keyExtractor={item => String(item.id)}
             renderItem={({item}) => (
               <SingleTransaction
-                transactionType="Transfer"
                 type={item?.type as 'Credit' | 'Debit'}
                 amount={item?.amount}
                 date={item?.date}
                 name={item?.name}
                 beneficiary={item?.beneficiary}
-                beneficiaryTitle={
-                  item?.type === 'Credit' ? 'Sender' : 'Beneficiary'
-                }
-                status={item?.status as 'Successful' | 'Failed'}
               />
             )}
             showsVerticalScrollIndicator={false}

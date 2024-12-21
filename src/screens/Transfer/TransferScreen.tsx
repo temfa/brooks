@@ -32,14 +32,14 @@ const TransferScreen = ({
         <TouchableOpacity
           style={styles.transfer}
           onPress={() => navigation.navigate('InstantTransfer')}>
-          <TransferActionSvg />
           <Text style={styles.transferText}>Transfer</Text>
+          <TransferActionSvg />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.history}
           onPress={() => navigation.navigate('TransactionHistory')}>
-          <TransHistorySvg />
           <Text style={styles.historyText}>Transaction History</Text>
+          <TransHistorySvg />
         </TouchableOpacity>
       </View>
       {data?.length === 0 ? (
@@ -63,20 +63,15 @@ const TransferScreen = ({
             </Pressable>
           </View>
           <View style={styles.recentBody}>
-            {data?.splice(0, 3)?.map((item, index) => {
+            {data?.splice(0, 4)?.map((item, index) => {
               return (
                 <SingleTransaction
-                  transactionType="Transfer"
                   key={index}
                   type={item?.type as 'Credit' | 'Debit'}
                   amount={item?.amount}
                   date={item?.date}
                   name={item?.name}
                   beneficiary={item?.beneficiary}
-                  beneficiaryTitle={
-                    item?.type === 'Credit' ? 'Sender' : 'Beneficiary'
-                  }
-                  status={item?.status as 'Successful' | 'Failed'}
                 />
               );
             })}
@@ -107,12 +102,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     flexDirection: 'row',
-    gap: 4,
+    gap: 9,
   },
   transferText: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: fonts.WorkSemiBold,
+    fontFamily: fonts.AeonikBold,
     color: 'white',
   },
   history: {
@@ -122,13 +117,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 17,
     flexDirection: 'row',
-    gap: 4,
+    gap: 9,
   },
   historyText: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: fonts.WorkRegular,
-    color: '#455A64',
+    fontFamily: fonts.AeonikRegular,
+    color: '#858E92',
   },
   recent: {
     gap: 12,
